@@ -10,6 +10,8 @@ public final class Dungeons extends JavaPlugin {
         // Plugin startup logic
         this.dungeonWorldHandler = new DungeonWorldHandler(this);
         dungeonWorldHandler.dungeonWorldCreation();
+
+
     }
 
     @Override
