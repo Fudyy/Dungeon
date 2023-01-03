@@ -4,7 +4,6 @@ import me.fudy.dungeons.Dungeons;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.*;
-import org.bukkit.block.Block;
 import org.bukkit.persistence.PersistentDataType;
 
 
@@ -24,7 +23,7 @@ public class DungeonWorldHandler {
     public void dungeonWorldCreation() {
 
         Bukkit.getServer().sendMessage(
-                Component.text("Creating").color(TextColor.color(25, 182, 255))
+                Component.text("Seting up").color(TextColor.color(25, 182, 255))
                 .append(Component.text(" \"DungeonsContainer\" world").color(TextColor.color(255, 167, 36)))
                 .append(Component.text(" in the server folder").color(TextColor.color(25, 182, 255)))
         );
@@ -37,12 +36,6 @@ public class DungeonWorldHandler {
         dungeonContainerWorld.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
         dungeonContainerWorld.setGameRule(GameRule.DO_MOB_SPAWNING, false);
         dungeonContainerWorld.setGameRule(GameRule.DO_FIRE_TICK, false);
-
-        createDungeonGrid();
     }
 
-    public void createDungeonGrid(){
-        Block bloque = Bukkit.getWorld("DungeonsContainer").getChunkAt(-4,3).getBlock(0, -64, 15);
-        bloque.setType(Material.BLACK_WOOL);
-    }
 }
