@@ -1,6 +1,6 @@
 package me.fudy.dungeons.worldhandler;
 
-import me.fudy.dungeons.Dungeons;
+import me.fudy.dungeons.DungeonsPlugin;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.*;
@@ -8,10 +8,10 @@ import org.bukkit.persistence.PersistentDataType;
 
 
 public class DungeonWorldHandler {
-    Dungeons plugin;
+    DungeonsPlugin plugin;
     NamespacedKey key;
 
-    public DungeonWorldHandler(Dungeons plugin) {
+    public DungeonWorldHandler(DungeonsPlugin plugin) {
         this.plugin = plugin;
         this.key = new NamespacedKey(plugin, "dungeonWorldKey");
     }

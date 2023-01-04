@@ -1,4 +1,4 @@
-name: Dungeons
+name: DungeonsPlugin
 version: '${project.version}'
-main: me.fudy.dungeons.Dungeons
+main: me.fudy.dungeons.DungeonsPlugin
 api-version: 1.19

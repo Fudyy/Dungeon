@@ -1,4 +1,4 @@
-package me.fudy.dungeons.worldhandler;
+package me.fudy.dungeons.Dungeon;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -11,9 +11,9 @@ public class DungeonGrid{
     private int xCoordinates = -64;
     private final int yCoordinates = -64;
     private final int zCoordinates = 63;
-
-    public DungeonGrid() {
-        generateGridBorder();
+    private int offset;
+    public DungeonGrid(int offset) {
+        this.offset = offset;
     }
 
     /**
