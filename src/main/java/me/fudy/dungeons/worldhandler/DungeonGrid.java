@@ -53,7 +53,7 @@ public class DungeonGrid{
 
     /**
      * Transforms the given grid coordinates to raw coordinates of the world.
-     * @param x
+     * @param x coord of a grid (0-255)
      * @return Raw X coordinate of the world.
      * @throws Exception
      */
@@ -66,7 +66,7 @@ public class DungeonGrid{
 
     /**
      * Transforms the given grid coordinates to raw coordinates of the world.
-     * @param y
+     * @param y coord of a grid (0-255)
      * @return Raw Y coordinate of the world.
      * @throws Exception
      */
