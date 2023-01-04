@@ -4,22 +4,28 @@ import org.bukkit.Bukkit;
 import org.bukkit.Material;
 
 public class DungeonGridHandler {
-    private int initialPosX;
-    private int initialPosY;
-    private int initialPosZ;
 
-    public DungeonGridHandler(int initialPosX, int initialPosY, int initialPosZ) {
-        this.initialPosX = initialPosX;
-        this.initialPosY = initialPosY;
-        this.initialPosZ = initialPosZ;
+    private int xCoordinates = -64;
+    private final int yCoordinates = -64;
+    private final int zCoordinates = 63;
+
+    public DungeonGridHandler() {
+        generateGridBorder();
+    }
+
+    private void gridLocator(){
+        while(Bukkit.getWorld("DungeonsContainer").getBlockAt(xCoordinates,yCoordinates,zCoordinates).getType() == Material.BLACK_WOOL){
+            xCoordinates = xCoordinates + 256;
+        }
     }
 
     public void generateGridBorder(){
+        gridLocator();
         for(int i = 0; i < 256; i++){
-            Bukkit.getWorld("DungeonsContainer").getBlockAt(initialPosX+i, initialPosY, initialPosZ).setType(Material.BLACK_WOOL);
-            Bukkit.getWorld("DungeonsContainer").getBlockAt(initialPosX, initialPosY, initialPosZ-i).setType(Material.BLACK_WOOL);
-            Bukkit.getWorld("DungeonsContainer").getBlockAt((initialPosX+255)-i, initialPosY, (initialPosZ-255)).setType(Material.BLACK_WOOL);
-            Bukkit.getWorld("DungeonsContainer").getBlockAt((initialPosX+255), initialPosY, (initialPosZ-255)+i).setType(Material.BLACK_WOOL);
+            Bukkit.getWorld("DungeonsContainer").getBlockAt(xCoordinates+i, yCoordinates, zCoordinates).setType(Material.BLACK_WOOL);
+            Bukkit.getWorld("DungeonsContainer").getBlockAt(xCoordinates, yCoordinates, zCoordinates-i).setType(Material.BLACK_WOOL);
+            Bukkit.getWorld("DungeonsContainer").getBlockAt((xCoordinates+255)-i, yCoordinates, (zCoordinates-255)).setType(Material.BLACK_WOOL);
+            Bukkit.getWorld("DungeonsContainer").getBlockAt((xCoordinates+255), yCoordinates, (zCoordinates-255)+i).setType(Material.BLACK_WOOL);
         }
     }
 }
