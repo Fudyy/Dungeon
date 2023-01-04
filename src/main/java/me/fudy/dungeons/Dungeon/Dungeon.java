@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Dungeon {
     private final DungeonGrid grid;
-    private List<DungeonRoom> rooms = new ArrayList<DungeonRoom>();
+    private List<DungeonRoom> rooms = new ArrayList<>();
     private List<Player> players = null;
     private long seed;
 
@@ -26,9 +26,11 @@ public class Dungeon {
         File[] schems = schemsFolder.listFiles();
 
         for (File schem : schems) {
+
             DungeonRoomType roomType = null;
+
             for (DungeonRoomType c : DungeonRoomType.values()) {
-                if(schem.getName().indexOf(c.name()) != -1){
+                if(schem.getName().indexOf(c.name()) != -1) {
                     roomType = c;
                     break;
                 }

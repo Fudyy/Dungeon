@@ -15,8 +15,6 @@ public final class DungeonsPlugin extends JavaPlugin {
         // Plugin startup logic
         this.dungeonWorldHandler = new DungeonWorldHandler(this);
         dungeonWorldHandler.dungeonWorldCreation();
-
-        new Dungeon(DungeonType.lost_mines).loadDungeonRooms();
     }
 
     @Override
