@@ -28,4 +28,13 @@ public class DungeonGridHandler {
             Bukkit.getWorld("DungeonsContainer").getBlockAt((xCoordinates+255), yCoordinates, (zCoordinates-255)+i).setType(Material.BLACK_WOOL);
         }
     }
+
+    public void removeGridBorder(){
+        for(int i = 0; i < 256; i++){
+            Bukkit.getWorld("DungeonsContainer").getBlockAt(xCoordinates+i, yCoordinates, zCoordinates).setType(Material.AIR);
+            Bukkit.getWorld("DungeonsContainer").getBlockAt(xCoordinates, yCoordinates, zCoordinates-i).setType(Material.AIR);
+            Bukkit.getWorld("DungeonsContainer").getBlockAt((xCoordinates+255)-i, yCoordinates, (zCoordinates-255)).setType(Material.AIR);
+            Bukkit.getWorld("DungeonsContainer").getBlockAt((xCoordinates+255), yCoordinates, (zCoordinates-255)+i).setType(Material.AIR);
+        }
+    }
 }
