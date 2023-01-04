@@ -1,6 +1,6 @@
 package me.fudy.dungeons.Dungeon;
 
-import me.fudy.dungeons.worldhandler.DungeonGridHandler;
+import me.fudy.dungeons.worldhandler.DungeonGrid;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -10,10 +10,10 @@ import java.util.List;
 
 public class DungeonMatch {
     private List<Player> matchPlayers;
-    private DungeonGridHandler grid;
+    private DungeonGrid grid;
     private DungeonType type;
 
-    public DungeonMatch(List<Player> matchPlayers, DungeonGridHandler grid, DungeonType type) {
+    public DungeonMatch(List<Player> matchPlayers, DungeonGrid grid, DungeonType type) {
         this.matchPlayers = matchPlayers;
         this.grid = grid;
         this.type = type;
@@ -23,7 +23,7 @@ public class DungeonMatch {
         return matchPlayers;
     }
 
-    public DungeonGridHandler getGrid() {
+    public DungeonGrid getGrid() {
         return grid;
     }
 
